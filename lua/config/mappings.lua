@@ -51,7 +51,6 @@ vim.keymap.set('n', '<leader>d', '"_d')
 vim.keymap.set('v', '<leader>d', '"_d')
 
 -- Buffers
-vim.keymap.set('n', '<leader>qq', ':q<CR>')
 vim.keymap.set('n', '<leader>bn', ':bn<CR>')
 vim.keymap.set('n', '<leader>bl', ':bl<CR>')
 vim.keymap.set('n', '<leader>bL', ':blast<CR>')
