@@ -59,5 +59,9 @@ vim.keymap.set('n', '<leader>bf', ':bf<CR>')
 -- Replace word under cursor
 vim.keymap.set('n', '<leader>s', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>')
 
+-- Split vertical window
+vim.keymap.set('n', '<leader>vs', ':vsplit<CR>')
+vim.keymap.set('n', '<leader>vn', ':vne<CR>')
+
 -- Call color logs
 vim.keymap.set('n', '<space>cl', ':call colorLogs()<CR>')
