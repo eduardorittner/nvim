@@ -20,6 +20,7 @@ vim.opt.cursorline = true
 
 -- Disable mouse
 vim.opt.mouse = ''
+vim.opt.mousehide = true
 
 -- Don't show mode since it's already in statusline
 vim.opt.showmode = false
