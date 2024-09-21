@@ -111,7 +111,11 @@ local servers = {
     },
   },
   mypy = {},
-  rust_analyzer = {},
+  rust_analyzer = {
+    cargo = {
+      allFeatures = true,
+    },
+  },
   zls = {},
   -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 
