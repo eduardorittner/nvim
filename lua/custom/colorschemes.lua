@@ -1,3 +1,8 @@
+local setup = function()
+  vim.o.background = 'dark'
+  vim.cmd [[colorscheme gruvbox]]
+end
+
 return {
   {
     'ellisonleao/gruvbox.nvim',
@@ -11,7 +16,7 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      require 'custom.configs.colorscheme'
+      setup()
     end,
   },
 }

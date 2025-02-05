@@ -3,14 +3,6 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
--- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
--- is not what someone will guess without a bit more experience.
---
--- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
--- or just use <C-\><C-n> to exit terminal mode
-vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
-
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
@@ -25,7 +17,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- Jump to last edit position on opening file
 vim.api.nvim_create_autocmd('BufReadPost', {
   pattern = '*',
-  callback = function(ev)
+  callback = function(_)
     if vim.fn.line '\'"' > 1 and vim.fn.line '\'"' <= vim.fn.line '$' then
       -- except for in git commit messages
       -- https://stackoverflow.com/questions/31449496/vim-ignore-specifc-file-in-autocommand
@@ -61,10 +53,11 @@ require('lazy').setup {
     },
   },
 
-  { import = 'custom.plugins' },
+  -- load all files in custom/plugins
+  { import = 'custom' },
 }
+
 require 'config.options'
 require 'config.hardmode'
 require 'config.mappings'
 require 'config.markdown'
-require 'config.color_logs'

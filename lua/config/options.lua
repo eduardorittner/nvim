@@ -1,15 +1,6 @@
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
--- vim.opt.listchars:append {
---   trail = '\\u22c5',
---   multispace = '\\u22c5',
---   eol = '\\u21b4',
---   tab = '<->',
---   nbsp = '\\u22c5',
---   extends = '+',
--- }
-
 vim.opt.guicursor = ''
 
 -- Preview substitutions as you type

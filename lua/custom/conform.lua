@@ -12,8 +12,6 @@ return {
         python = { 'black' },
         c = { 'clang-format' },
         rust = { 'rust_analyzer' },
-        go = { 'gofumpt' },
-        verilog = { 'verible' },
       },
     },
   },
