@@ -131,15 +131,18 @@ local setup = function() --  This function gets run when an LSP attaches to a pa
 
     -- rust
     rust_analyzer = {
+      cmd = {
+        '~/.cargo/bin/rust-analyzer',
+      },
       cargo = {
         allFeatures = true,
       },
     },
 
     -- js + html + css
-    html = {},
-    eslint = {},
-    ts_ls = {},
+    -- html = {},
+    -- eslint = {},
+    -- ts_ls = {},
   }
 
   require('mason').setup()
