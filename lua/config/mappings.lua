@@ -73,3 +73,8 @@ vim.keymap.set('n', '<leader>vn', ':vne<CR>')
 
 -- Call color logs
 vim.keymap.set('n', '<space>cl', ':call colorLogs()<CR>')
+
+vim.keymap.set('n', '<space>g', function()
+  vim.cmd 'Git'
+  vim.cmd 'only'
+end, { noremap = true, silent = true })
