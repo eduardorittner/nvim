@@ -7,6 +7,7 @@ local setup = function()
     { '<leader>w', group = '[W]orkspace' },
     { '<leader>b', group = '[B]uffer' },
     { '<leader>f', group = '[F]ile' },
+    { '<leader>g', group = '[G]it' },
     { '<leader>h', group = '[H]arpoon' },
   }
 end
