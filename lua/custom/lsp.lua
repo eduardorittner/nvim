@@ -51,13 +51,9 @@ local setup = function() --  This function gets run when an LSP attaches to a pa
       map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
       if vim.lsp.inlay_hint then
-        vim.lsp.inlay_hint.enable(true, { 0 }) -- Turn it on initially
+        vim.lsp.inlay_hint.enable(true, { bufnr = event.buf }) -- Turn it on initially
         map('th', function()
-          if vim.lsp.inlay_hint.is_enabled() then
-            vim.lsp.inlay_hint.enable(false, { 0 })
-          else
-            vim.lsp.inlay_hint.enable(true, { 0 })
-          end
+          vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }), { bufnr = event.buf })
         end, 'Toggle inlay type hints')
       end
 
@@ -67,7 +63,7 @@ local setup = function() --  This function gets run when an LSP attaches to a pa
       --
       -- When you move your cursor, the highlights will be cleared (the second autocommand).
       local client = vim.lsp.get_client_by_id(event.data.client_id)
-      if client and client.server_capabilities.documentHighlightProvider then
+      if client and client.supports_method('textDocument/documentHighlight', event.buf) then
         vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
           buffer = event.buf,
           callback = vim.lsp.buf.document_highlight,
@@ -127,7 +123,8 @@ local setup = function() --  This function gets run when an LSP attaches to a pa
     clangd = {},
 
     -- python
-    mypy = {},
+    ty = {},
+    ruff = {},
 
     -- rust
     rust_analyzer = {

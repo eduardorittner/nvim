@@ -9,10 +9,6 @@ vim.opt.inccommand = 'split'
 -- Show cursor line
 vim.opt.cursorline = true
 
--- Disable mouse
-vim.opt.mouse = ''
-vim.opt.mousehide = true
-
 -- Don't show mode since it's already in statusline
 vim.opt.showmode = false
 
@@ -23,14 +19,14 @@ vim.o.hlsearch = false
 vim.o.tabstop = 4 -- A TAB character looks like 4 spaces
 vim.o.expandtab = true -- Pressing the TAB key will insert spaces instead of a TAB character
 vim.o.softtabstop = 4 -- Number of spaces inserted instead of a TAB character
-vim.o.shiftwidth = 4 -- Number of spaces inserted when indenti
+vim.o.shiftwidth = 4 -- Number of spaces inserted when indenting
 
 -- Make line numbers relative
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
--- Set minimum number of lines always visible below cursor
-vim.opt.scrolloff = 10
+-- Minimum number of lines always visible above/below cursor
+vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 0
 
 -- Enable mouse mode
@@ -40,9 +36,6 @@ vim.o.mouse = 'a'
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help "clipboard"`
 vim.o.clipboard = 'unnamedplus'
-
--- Minimum number of lines below cursor
-vim.opt.scrolloff = 8
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -58,7 +51,7 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 -- Keep signcolumn on by default
-vim.wo.signcolumn = 'yes'
+vim.opt.signcolumn = 'yes'
 
 -- How new splits should be added
 vim.opt.splitright = true
