@@ -106,7 +106,7 @@ local setup = function() --  This function gets run when an LSP attaches to a pa
             -- for your neovim configuration.
             library = {
               '${3rd}/luv/library',
-              unpack(vim.api.nvim_get_runtime_file('', true)),
+              (table.unpack or unpack)(vim.api.nvim_get_runtime_file('', true)),
             },
             -- If lua_ls is really slow on your computer, you can try this instead:
             -- library = { vim.env.VIMRUNTIME },
@@ -123,7 +123,7 @@ local setup = function() --  This function gets run when an LSP attaches to a pa
     clangd = {},
 
     -- python
-    ty = {},
+    pyright = {},
     ruff = {},
 
     -- rust
