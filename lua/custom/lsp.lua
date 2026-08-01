@@ -128,11 +128,12 @@ local setup = function() --  This function gets run when an LSP attaches to a pa
 
     -- rust
     rust_analyzer = {
-      cmd = {
-        '~/.cargo/bin/rust-analyzer',
-      },
-      cargo = {
-        allFeatures = true,
+      settings = {
+        ['rust-analyzer'] = {
+          cargo = {
+            allFeatures = true,
+          },
+        },
       },
     },
 
